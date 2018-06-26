@@ -21,7 +21,7 @@ public class TestDemoApplication {
 
     @RequestMapping("/")
     public String demo() {
-        return "hello spring boot";
+        return "hello spring boot,begin!!!";
     }
 
     @RequestMapping("/hello")
