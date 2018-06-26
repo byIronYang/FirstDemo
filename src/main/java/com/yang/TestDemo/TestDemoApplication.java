@@ -12,23 +12,26 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableAutoConfiguration
 @RestController
-@EnableGlobalMethodSecurity(prePostEnabled = true )
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class TestDemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TestDemoApplication.class, args);
-	}
-	@RequestMapping("/")
-	public String demo(){
-		return "hello spring boot";
-	}
-	@RequestMapping("/hello")
-	public String hello(){
-		return "hello spring boot";
-	}
-	@RequestMapping("/role")
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public String role(){
-		return "admin ";
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TestDemoApplication.class, args);
+    }
+
+    @RequestMapping("/")
+    public String demo() {
+        return "hello spring boot";
+    }
+
+    @RequestMapping("/hello")
+    public String hello() {
+        return "hello spring boot";
+    }
+
+    @RequestMapping("/role")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String role() {
+        return "admin ";
+    }
 }
